@@ -1,0 +1,96 @@
+<!DOCTYPE <DOCTYPE <!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>User Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="Controller.js"></script>
+</head>
+
+<body style="background-color:#DF72">
+    <p id="room">Room: Global </p>
+    <div id="container">
+
+    </div>
+    <input id="writeMessage" width="80%">
+    <p width="80%"></p>
+    <button onclick=sendMessage()>Send</button><br>
+    <button onclick=createDialog()>Create dialog</button> <input id="writeNamePublicDialog" width="80%"> <br>
+    <button onclick=createPrivateDialog()>Create private dialog</button> <input id="writeNamePrivateDialog" width="80%">
+    <br>
+    <button onclick=addPerson()>Add person to private dialog</button> <input id="writeNamePerson" width="80%"> <br>
+
+    <table id="table" border="border" cellpadding="10px">
+        <tr>
+            <td>Rooms:</td>
+        </tr>
+    </table>
+
+    <script>
+
+        window.onload = function () {
+
+            name = localStorage.getItem("name");
+
+            showAnswer(localStorage.getItem("startMessage"))
+
+            if (localStorage.getItem("startMessage") === "Account authorized" || localStorage.getItem("startMessage") === "Account created") {
+                let reqData =
+                {
+                    name: name,
+                    password: "",
+                    room: "Global",
+                    commandName: "AllDialog",
+                    commandContext: ""
+                }
+
+                let reqString = JSON.stringify(reqData);
+                let answer = requestToServer("api." + reqString);
+
+
+                context = JSON.parse(decodeURI(answer));
+                let rooms = context.arr;
+
+                for (let i = 0; i < rooms.length; i++) {
+                    if (rooms[i] == 'Global') {
+                        continue;
+                    }
+                    addChatToTable(rooms[i]);
+                }
+            }
+
+            let reqData =
+            {
+                name: "",
+                password: "",
+                room: "Global",
+                commandName: "getMessages",
+                commandContext: ""
+            }
+
+            let reqString = JSON.stringify(reqData);
+            let answer = requestToServer("api." + reqString);
+
+            answer = JSON.parse(decodeURI(answer));
+
+            var p = document.createElement("p");
+
+            p.innerHTML = answer.commandContext.replace(/\n/g, '<br>');
+            var container = document.getElementById("container");
+            container.appendChild(p);
+
+
+            addChatToTable(room);
+
+            openWebSocket();
+        };
+    </script>
+
+
+</body>
+
+</html>
