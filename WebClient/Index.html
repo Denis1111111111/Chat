@@ -1,4 +1,4 @@
-<!DOCTYPE <DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Authorization</title>
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="StyleIndex.css" />
     <script src="Controller.js"></script>
 </head>
 
-<body style="background-color:#DF72">
-    <p id="result" width="80%"> Create account or authorize </p>
-    <pre> NAME                  PASSWORD </pre>
-    <input id="writeName" align="center" width="80%">
-    <input id="writePassword" align="center" width="80%">
+<body style="margin: 0">
 
+    <div class="mainContainer">
 
-    <p width="80%"></p>
-    <button onclick=signIn()>Sign in</button>
-    <button onclick=createAccount()>Create account</button>
-    <button onclick=CancelAutorize()>Cancel</button>
+        <div class="p">
+            <h2 id="result"> Create account or authorize </h2>
+
+        </div>
+
+        <div class="inputs">
+
+            <div class="inputRight">
+                <p>NAME</p>
+                <input id="writeName">
+
+            </div>
+
+            <div class="inputLeft">
+                <p>PASSWORD</p>
+                <input id="writePassword">
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <button onclick=signIn()>Sign in</button>
+            <button onclick=createAccount()>Create account</button>
+            <button onclick=CancelAutorize()>Cancel</button>
+        </div>
+
+    </div>
 </body>
 </body>
 

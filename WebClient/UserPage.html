@@ -1,4 +1,4 @@
-<!DOCTYPE <DOCTYPE <!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,28 +7,85 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>User Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="StyleUser.css" />
     <script src="Controller.js"></script>
 </head>
 
-<body style="background-color:#DF72">
-    <p id="room">Room: Global </p>
-    <div id="container">
+<body style="margin: 0">
+
+
+    <div class="mainContainer">
+
+            <p id="room">Room: Global </p>
+
+            <div id="container">
+
+                </div>
+
+        <div class="bodyContainer">
+
+           
+            
+
+
+            <div class="columnLeft">
+
+                <div class="writeMessage">
+
+                    <input id="writeMessage" width="80%">
+                    <button onclick=sendMessage()>Send</button><br>
+
+                </div>
+
+                <div class="createDialog">
+
+                    <input id="writeNamePublicDialog" width="80%">
+                    <button onclick=createDialog()>Create dialog</button> 
+
+                </div>
+
+                <div class="createPrivateDialog">
+
+                     <input id="writeNamePrivateDialog"width="80%">
+                     <button onclick=createPrivateDialog()>Create private dialog</button>
+
+                </div>
+
+                <div class="addPersonToPrivateDialog">
+
+                        <input id="writeNamePerson" width="80%">
+                    <button onclick=addPerson()>Add person to private dialog</button>
+                    
+
+                </div>
+
+            </div>
+
+
+            <div class="tableContainer">
+
+
+                <table id="table" border="border" cellpadding="10px">
+                    <tr>
+                        <td>Rooms:</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
 
     </div>
-    <input id="writeMessage" width="80%">
-    <p width="80%"></p>
-    <button onclick=sendMessage()>Send</button><br>
-    <button onclick=createDialog()>Create dialog</button> <input id="writeNamePublicDialog" width="80%"> <br>
-    <button onclick=createPrivateDialog()>Create private dialog</button> <input id="writeNamePrivateDialog" width="80%">
-    <br>
-    <button onclick=addPerson()>Add person to private dialog</button> <input id="writeNamePerson" width="80%"> <br>
 
-    <table id="table" border="border" cellpadding="10px">
-        <tr>
-            <td>Rooms:</td>
-        </tr>
-    </table>
+
+
+
+
+
+
+
+
+
 
     <script>
 

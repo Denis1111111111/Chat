@@ -1,0 +1,73 @@
+*
+{
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+.mainContainer
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: rgb(110, 63, 9);
+    background-size: 100%;
+    margin: 0;
+}
+
+.bodyContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.writeMessage
+{
+    display: flex;
+    flex-direction: row;  
+}
+
+.createDialog
+{
+    display: flex;
+    flex-direction: row;  
+}
+
+.createPrivateDialog
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.addPersonToPrivateDialog
+{
+    display: flex;
+    flex-direction: row; 
+}
+
+.tableContainer
+{
+    height: 100%;
+}
+
+
+.BanContainer
+{
+    display: flex;
+    flex-direction: row; 
+}
+
+.RemoveBan
+{
+    display: flex;
+    flex-direction: row; 
+}
+
+.RemovePerson
+{
+    display: flex;
+    flex-direction: row; 
+}
